@@ -54,6 +54,30 @@ func main() {
 		fmt.Println(array_type)
 		fmt.Println(empty_array)
 		fmt.Println(custom_array_potition_value)
+	} else if false {
+		fmt.Println("condition 2")
+	} else {
+		if false {
+			fmt.Println("nested condition")
+		}
+		fmt.Println("last condition")
+	}
+
+	switch b {
+	case 0:
+		fmt.Println("negative")
+	case 1:
+		fmt.Println("postive")
+	default:
+		fmt.Println("not a number")
+	}
+
+	for i := 0; i <= 50; i += 10 {
+		if i == 30 {
+			fmt.Println("loops reach 30")
+			continue
+		}
+		fmt.Println(i)
 	}
 
 	fmt.Println(a, b+c, float*float)
