@@ -6,6 +6,26 @@ import (
 
 var text, word string = "Hello well", "word"
 
+type User struct {
+	username string
+	age      int
+	email    string
+}
+
+func my_function(message string, number int) (result string, total int) {
+	result = message
+	total = number + 10
+	return
+}
+
+func recursion_func(number int) int {
+	if number == 11 {
+		return 0
+	}
+	fmt.Println(number)
+	return recursion_func(number + 1)
+}
+
 func main() {
 	greating := "welcome"
 
@@ -80,10 +100,27 @@ func main() {
 		fmt.Println(i)
 	}
 
+	textvar, numvar := my_function("Hello func", 20)
+	fmt.Println(textvar, numvar)
+	recursion_func(1)
+
+	var user1 User
+	user1.username = "dave"
+	user1.age = 23
+	user1.email = "dave@example.com"
+
+	printUser(user1)
+
 	fmt.Println(a, b+c, float*float)
 	fmt.Printf("%b %+d %o %#X %04d \n", a, b, a, a, b)
 
 	fmt.Print(text, "\n")
 	fmt.Print(word, " ", greating, "\n")
 	fmt.Printf("my number is %v and %#v type %T %%\n", a, greating, greating)
+}
+
+func printUser(data User) {
+	fmt.Println("Name: ", data.username)
+	fmt.Println("Age: ", data.age)
+	fmt.Println("Email: ", data.email)
 }
